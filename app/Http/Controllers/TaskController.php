@@ -13,7 +13,11 @@ class TaskController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+
+        // Create The Task...
     }
 
     /**
