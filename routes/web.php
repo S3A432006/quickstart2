@@ -47,7 +47,9 @@ public function destroy(Request $request, Task $task)
 {
     $this->authorize('destroy', $task);
 
-    // 刪除該任務...
+    $task->delete();
+
+    return redirect('/tasks');
 }
 
 
